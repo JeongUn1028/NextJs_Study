@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useState } from "react";
+import { ChangeEvent, MouseEvent } from "react";
 export interface IBoardWriteProps {
   isEdit: boolean;
   data?: any;

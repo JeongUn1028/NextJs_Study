@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 
-styled;
-
 export const MyInput = styled.input`
   color: red;
 `;

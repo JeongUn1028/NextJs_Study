@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useMutation } from "@apollo/client/react";
 import { useState } from "react";
 import BoardWriteUI from "./BoardWrite.presenter";
