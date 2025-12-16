@@ -17,3 +17,7 @@ Container-Presenter ~ TypeScript
 ### 12.12 (금)
 
 Event-Bubbling ~ Pagination
+
+### 12.16 (화)
+
+Infinite Scroll
