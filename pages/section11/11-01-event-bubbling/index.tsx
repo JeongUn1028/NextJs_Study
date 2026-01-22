@@ -7,6 +7,7 @@ import {
 } from "../../../src/commons/types/generated/types";
 import { writer } from "repl";
 
+// ! GraphQL 게시글 조회 쿼리
 const FETCH_BOARDS = gql`
   query {
     fetchBoards {
@@ -17,15 +18,18 @@ const FETCH_BOARDS = gql`
     }
   }
 `;
+// ! 이벤트 버블링 데모 페이지
 export default function StaticRoutingMovedPage() {
   const { data } = useQuery<Pick<IQuery, "fetchBoards">, IQueryFetchBoardsArgs>(
-    FETCH_BOARDS
+    FETCH_BOARDS,
   );
 
+  // * 상위 엘리먼트 클릭 이벤트 핸들러
   const onClickAlert = (event: MouseEvent<HTMLDivElement>) => {
     alert(event.currentTarget.dataset.writer);
   };
 
+  // * 타이틀 클릭 이벤트 핸들러
   const qqq = () => {
     alert("클릭 타이틀");
   };

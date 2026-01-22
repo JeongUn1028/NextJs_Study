@@ -7,6 +7,7 @@ import {
 } from "../../../src/commons/types/generated/types";
 import Checkbox from "./checkbox";
 
+// ! GraphQL 게시글 조회 쿼리
 const FETCH_BOARDS = gql`
   query {
     fetchBoards {
@@ -17,22 +18,27 @@ const FETCH_BOARDS = gql`
     }
   }
 `;
+// ! 이벤트 전파 중단(stopPropagation) 데모 페이지
 export default function StaticRoutingMovedPage() {
   const { data } = useQuery<Pick<IQuery, "fetchBoards">, IQueryFetchBoardsArgs>(
     FETCH_BOARDS,
   );
 
+  // * 완전한 값을 간단힐 쫼니 alert로 변경
   const onClickAlert = (event: MouseEvent<HTMLDivElement>) => {
     alert(event.currentTarget.dataset.writer);
   };
 
+  // * 타이틀 영역 크리 이벤트
   const qqq = () => {
-    alert("클릭 타이틀");
+    alert("클릭 타이틈");
   };
 
+  // * 단계 1 깊이의 크리 이벤트
   const qqq1 = () => {
     alert("1 click");
   };
+  // * 단계 4 단계를 초늨하는 중단 이벤트
   const qqq4 = () => {
     alert("4 click");
   };

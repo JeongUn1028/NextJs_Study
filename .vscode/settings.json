@@ -1,0 +1,24 @@
+{
+  "editor.tokenColorCustomizations": {
+    "comments": "#B4D7FF"
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "rules": {
+      "comment.documentation": {
+        "foreground": "#B4D7FF"
+      }
+    }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

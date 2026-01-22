@@ -7,17 +7,17 @@ export default function Pagination(prop: {
   const { refetch, lastPage } = prop;
   const [startPage, setStartPage] = useState<number>(1);
 
-  //* go to page
+  // ! 특정 페이지로 이동하는 함수
   const onClickPage = (event: MouseEvent<HTMLSpanElement>): void => {
     void refetch({ page: Number(event.currentTarget.id) });
   };
-  //* go to prevPage
+  // * 이전 페이지 그룹으로 이동
   const onClickPrev = () => {
     if (startPage === 1) return;
     setStartPage((prev) => prev - 10);
     refetch({ page: startPage - 10 });
   };
-  //* go to nextPage
+  // * 다음 페이지 그룹으로 이동
   const onClickNext = () => {
     if (startPage + 10 > lastPage) return;
     setStartPage((prev) => prev + 10);

@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client";
 import { useMutation, useQuery } from "@apollo/client/react";
 
+// ! GraphQL 게시글 조회 쿼리
 const FETCH_BOARDS = gql`
   query {
     fetchBoards {
@@ -12,6 +13,7 @@ const FETCH_BOARDS = gql`
   }
 `;
 
+// ! GraphQL 게시글 삭제 뮤테이션
 const DELETE_BOARD = gql`
   mutation deleteBoard($number: Int) {
     deleteBoard(number: $number) {
@@ -24,6 +26,7 @@ export default function StaticRoutingMovedPage() {
   const { data } = useQuery(FETCH_BOARDS);
   const [deleteBoard] = useMutation(DELETE_BOARD);
   console.log(data?.fetchBoards);
+  // ! 게시글 삭제 핸들러
   const onClickDelete = (event) => {
     deleteBoard({
       variables: {

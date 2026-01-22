@@ -2,9 +2,11 @@ import { Modal } from "antd";
 import { useState } from "react";
 import DaumPostcodeEmbed, { Address } from "react-daum-postcode";
 
+// ! 다음 주소 단계 API를 걼뜹 모달 예시
 export default function ModalAlertPage() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // ! 모달 여닫기 토글 함수
   const onToggleModal = (): void => {
     setIsOpen((prev) => !prev);
   };

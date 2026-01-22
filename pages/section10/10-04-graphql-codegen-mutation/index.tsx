@@ -6,6 +6,7 @@ import {
 } from "../../../src/commons/types/generated/types";
 // import { useState } from "react";
 
+// ! GraphQL 게시글 작성 뮤테이션
 const GRAPHQL_SETTING = gql`
   mutation createBoard($writer: String, $title: String, $contents: String) {
     createBoard(writer: $writer, title: $title, contents: $contents) {
@@ -23,6 +24,7 @@ export default function GraphqlMutationPage() {
     IMutationCreateBoardArgs
   >(GRAPHQL_SETTING);
   // const [writer, setWriter] = useState<string>("");
+  // ! GraphQL Mutation 실행 함수
   const onClickSubmit = async () => {
     const result = await MyFunction({
       variables: {

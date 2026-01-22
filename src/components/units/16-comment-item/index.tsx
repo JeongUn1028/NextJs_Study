@@ -10,6 +10,7 @@ interface ICommentItemProps {
 
 export default function CommentItem({ key, el }: ICommentItemProps) {
   const [isEdit, setIsEdit] = useState(false);
+  // * 댓글 수정 모드 토글 함수
   const onClickEdit = (): void => {
     setIsEdit(true);
   };

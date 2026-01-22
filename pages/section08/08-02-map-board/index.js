@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
 
+// ! GraphQL 게시글 조회 쿼리
 const FETCH_BOARDS = gql`
   query {
     fetchBoards {
@@ -11,6 +12,7 @@ const FETCH_BOARDS = gql`
     }
   }
 `;
+// ! 게시글 목록 페이지 - GraphQL useQuery 사용
 export default function StaticRoutingMovedPage() {
   const { data } = useQuery(FETCH_BOARDS);
   console.log(data?.fetchBoards);

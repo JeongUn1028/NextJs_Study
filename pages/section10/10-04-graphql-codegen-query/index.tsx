@@ -6,6 +6,7 @@ import {
   IQueryFetchBoardArgs,
 } from "../../../src/commons/types/generated/types";
 
+// ! GraphQL 게시글 조회 쿼리
 const FETCH_BOARD = gql`
   query fetchBoard($number: Int) {
     fetchBoard(number: $number) {
@@ -25,7 +26,7 @@ export default function StaticRoutingMovedPage() {
       variables: {
         number: boardId,
       },
-    }
+    },
   );
   console.log(data);
   return (
