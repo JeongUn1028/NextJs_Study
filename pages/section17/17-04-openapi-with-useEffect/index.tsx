@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function RestGetPage() {
   const [image, setImage] = useState<string>("");
-
+ 
   // ! 컴포넌트 마운트 시 강아지 이미지 API 호출
   useEffect(() => {
     // * 비동기 함수로 API 데이터 조회 및 상태 업데이트

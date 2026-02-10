@@ -1,25 +1,51 @@
-// eslint-disable-next-line no-undef
 module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
-  extends: ["plugin:react/recommended", "prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime",
+    "prettier",
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: "./tsconfig.json",
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: "latest",
     sourceType: "module",
+    project: "./tsconfig.json",
   },
   plugins: ["react", "@typescript-eslint"],
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   rules: {
+    // React 규칙
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/explicit-function-return-types": [
-      "error",
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+
+    // TypeScript 규칙
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
       {
-        allowExpressions: false,
-        allowTypedFunctionExpressions: false,
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
       },
     ],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+
+    // 일반 규칙
+    "no-console": ["warn", { allow: ["warn", "error"] }],
+    "prefer-const": "error",
+    "no-var": "error",
   },
 };
