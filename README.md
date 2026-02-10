@@ -21,3 +21,7 @@ Event-Bubbling ~ Pagination
 ### 12.16 (화)
 
 Infinite Scroll
+
+### 2.10 (화)
+
+백엔드의 이해
