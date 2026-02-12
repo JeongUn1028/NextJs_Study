@@ -29,3 +29,7 @@ Infinite Scroll
 ### 2.11 (수)
 
 이미지 처리
+
+### 2.12 (목)
+
+search
