@@ -5,13 +5,15 @@ interface IApolloSettingProps {
   children: JSX.Element | JSX.Element[];
 }
 
+const GLOBAL_STATE = new InMemoryCache();
+
 export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
   const uploadLink = createUploadLink({
-    uri: "http://backend-practice.codecamp.co.kr/graphql",
+    uri: "https://backend-practice.codebootcamp.co.kr/graphql",
   });
   const client = new ApolloClient({
     link: ApolloLink.from([uploadLink]),
-    cache: new InMemoryCache(),
+    cache: GLOBAL_STATE,
   });
   return <ApolloProvider client={client}>{props.children}</ApolloProvider>;
 }

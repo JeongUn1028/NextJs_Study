@@ -33,3 +33,8 @@ Infinite Scroll
 ### 2.12 (목)
 
 search
+
+### 2.16 (월)
+
+state-prev와 graphql의 실체
+Global-state

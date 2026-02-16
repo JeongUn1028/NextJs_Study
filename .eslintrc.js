@@ -33,6 +33,14 @@ module.exports = {
     "react/jsx-uses-react": "off",
 
     // TypeScript 규칙
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        allowExpressions: true,
+        allowTypedFunctionExpressions: false,
+        allowHigherOrderFunctions: false,
+      },
+    ],
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
