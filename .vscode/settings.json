@@ -19,9 +19,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.suggest.autoImports": true,
-  "javascript.suggest.autoImports": true
+  "javascript.suggest.autoImports": true,
+  "eslint.useFlatConfig": true,
+  "eslint.trace.server": "verbose"
 }
