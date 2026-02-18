@@ -9,10 +9,24 @@
       }
     }
   },
+  "editor.suggest.showInlineCompletions": true,
+  "editor.inlineSuggest.enabled": true,
+  "typescript.suggest.autoImports": true,
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.completeJSDoc": true,
+  "typescript.tsserver.useSeparateSyntaxServer": true,
+  "eslint.trace.server": "verbose",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.removeUnusedImports": "explicit",
+    "source.organizeImports": "explicit"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
+      "source.removeUnusedImports": "explicit",
       "source.organizeImports": "explicit"
     }
   },
@@ -20,6 +34,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
+      "source.removeUnusedImports": "explicit",
       "source.organizeImports": "explicit"
     }
   },
@@ -27,6 +42,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
+      "source.removeUnusedImports": "explicit",
       "source.organizeImports": "explicit"
     }
   },
@@ -34,11 +50,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
+      "source.removeUnusedImports": "explicit",
       "source.organizeImports": "explicit"
     }
-  },
-  "typescript.suggest.autoImports": true,
-  "javascript.suggest.autoImports": true,
-  "typescript.tsserver.useSeparateSyntaxServer": true,
-  "eslint.trace.server": "verbose"
+  }
 }

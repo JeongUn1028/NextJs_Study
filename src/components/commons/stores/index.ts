@@ -4,4 +4,9 @@ const isEditState = atom({
   key: "isEditState",
   default: false,
 });
-export { isEditState };
+
+const accessTokenState = atom({
+  key: "accessTokenState",
+  default: "",
+});
+export { isEditState, accessTokenState };

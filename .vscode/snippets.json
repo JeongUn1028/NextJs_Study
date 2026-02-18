@@ -1,0 +1,87 @@
+{
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "import { useState } from 'react';",
+      "",
+      "export default function ${1:ComponentName}() {",
+      "  const [${2:state}, set${2:State}] = useState(${3:null});",
+      "",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  );",
+      "}"
+    ],
+    "description": "React functional component with useState and Fragment"
+  },
+  "React Functional Component (TypeScript)": {
+    "prefix": "rfct",
+    "body": [
+      "import { useState } from 'react';",
+      "",
+      "interface Props {",
+      "  $1",
+      "}",
+      "",
+      "export default function ${2:ComponentName}({ }: Props) {",
+      "  const [${3:state}, set${3:State}] = useState(${4:null});",
+      "",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  );",
+      "}"
+    ],
+    "description": "React functional component with useState, TypeScript and Fragment"
+  },
+  "React Component Snippet": {
+    "prefix": "comp",
+    "body": ["<>", "  $0", "</>"],
+    "description": "Fragment wrapper for component JSX"
+  },
+  "React Component with useRouter": {
+    "prefix": "rfcr",
+    "body": [
+      "import { useState } from 'react';",
+      "import { useRouter } from 'next/router';",
+      "",
+      "export default function ${1:ComponentName}() {",
+      "  const router = useRouter();",
+      "  const [${2:state}, set${2:State}] = useState(${3:null});",
+      "",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  );",
+      "}"
+    ],
+    "description": "React component with useState and useRouter"
+  },
+  "React Component with useRouter (TypeScript)": {
+    "prefix": "rfctr",
+    "body": [
+      "import { useState } from 'react';",
+      "import { useRouter } from 'next/router';",
+      "",
+      "interface Props {",
+      "  $1",
+      "}",
+      "",
+      "export default function ${2:ComponentName}({ }: Props) {",
+      "  const router = useRouter();",
+      "  const [${3:state}, set${3:State}] = useState(${4:null});",
+      "",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  );",
+      "}"
+    ],
+    "description": "React component with useState, useRouter, and TypeScript"
+  }
+}
