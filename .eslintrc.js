@@ -56,6 +56,14 @@ module.exports = {
       },
     ],
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        checksVoidReturn: {
+          attributes: true,
+        },
+      },
+    ],
 
     // 일반 규칙
     "no-console": ["warn", { allow: ["log", "warn", "error"] }],

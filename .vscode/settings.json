@@ -9,6 +9,130 @@
       }
     }
   },
+  "colorful-comments.multilineComments": false,
+  "colorful-comments.highlightPlainText": false,
+  "colorful-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF6B6B",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "?",
+      "color": "#FFD93D",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "*",
+      "color": "#6BCB77",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "~",
+      "color": "#FF6B9D",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "//",
+      "color": "#C0C0C0",
+      "strikethrough": true,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "TODO",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "FIXME",
+      "color": "#FF0000",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "NOTE",
+      "color": "#1E90FF",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "HACK",
+      "color": "#FF1493",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "REVIEW",
+      "color": "#00CED1",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "FUNC",
+      "color": "#FFD700",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "Component",
+      "color": "#00FFC8",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "FUNCTION",
+      "color": "#9D4EDD",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "METHOD",
+      "color": "#7209B7",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "CLASS",
+      "color": "#560BAD",
+      "strikethrough": false,
+      "bold": false,
+      "italic": false,
+      "backgroundColor": "transparent"
+    }
+  ],
   "editor.suggest.showInlineCompletions": true,
   "editor.inlineSuggest.enabled": true,
   "typescript.suggest.autoImports": true,
