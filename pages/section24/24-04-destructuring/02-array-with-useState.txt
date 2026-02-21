@@ -1,0 +1,8 @@
+const useState = (init) => {
+
+  let state = init
+  const setState = (newState) => {
+    state = newState
+  }
+  return [state, setState]
+}

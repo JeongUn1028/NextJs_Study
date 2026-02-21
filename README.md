@@ -47,5 +47,11 @@ Login
 
 react-hook-form과 custom-hooks
 
-- 2.20(금)
-  - react-hook-form, wrap-async 주의사항
+### 2.21 (토)
+
+react-hook-form과 custom-hooks 계속
+--\* yup
+--\* 컴포넌트 분리
+--\* 구조분해 할당
+카카오 지도 연동
+apollo-cache-state
