@@ -1,7 +1,5 @@
 import useMoveToPage from "@/src/components/commons/hooks/useMoveToPage";
 
-
-//TODO: 커스텀 훅 - useMoveToPage
 function CustomHooksUseMoveToPage(): JSX.Element {
   const { onClickMoveToPage } = useMoveToPage();
   return (

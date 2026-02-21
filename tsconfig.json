@@ -30,7 +30,7 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/section24/24-08-typescript-generic-practice-hof copy/index.tsx"],
   "exclude": [
     "node_modules",
     ".next",
