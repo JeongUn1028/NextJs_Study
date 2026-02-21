@@ -53,5 +53,8 @@ react-hook-form과 custom-hooks 계속
 --\* yup
 --\* 컴포넌트 분리
 --\* 구조분해 할당
+--\* custom-hook
+--\* container-presenter custom-hooks-refactoring
+--\* typescript generic
 카카오 지도 연동
 apollo-cache-state

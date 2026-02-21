@@ -9,4 +9,9 @@ const accessTokenState = atom({
   key: "accessTokenState",
   default: "",
 });
-export { isEditState, accessTokenState };
+
+const visitedPageState = atom({
+  key: "visitedPageState",
+  default: "",
+});
+export { isEditState, accessTokenState, visitedPageState };
