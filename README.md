@@ -50,16 +50,22 @@ react-hook-form과 custom-hooks
 ### 2.21 (토)
 
 react-hook-form과 custom-hooks 계속
---\* yup
---\* 컴포넌트 분리
---\* 구조분해 할당
---\* custom-hook
---\* container-presenter custom-hooks-refactoring
---\* typescript generic
-카카오 지도 연동
+
+- yup
+- 컴포넌트 분리
+- 구조분해 할당
+- custom-hook
+- container-presenter custom-hooks-refactoring
+- typescript generic
+  카카오 지도 연동
 
 ### 2.22 (일)
 
 apollo-cache
 web-editor
---\* hydration
+
+- hydration
+
+### 2.23 (월)
+
+결제 처리
