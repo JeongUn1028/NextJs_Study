@@ -1,4 +1,5 @@
-import { atom } from "recoil";
+import getAccessToken from "@/src/commons/libraries/getAccessToken";
+import { atom, selector } from "recoil";
 
 const isEditState = atom({
   key: "isEditState",
@@ -14,4 +15,17 @@ const visitedPageState = atom({
   key: "visitedPageState",
   default: "",
 });
-export { isEditState, accessTokenState, visitedPageState };
+
+const restoreAccessTokenLoadable = selector({
+  key: "restoreAccessTokenLoadable",
+  get: async (): Promise<string> => {
+    const newAccessToken = await getAccessToken();
+    return newAccessToken;
+  },
+});
+export {
+  accessTokenState,
+  isEditState,
+  restoreAccessTokenLoadable,
+  visitedPageState,
+};
