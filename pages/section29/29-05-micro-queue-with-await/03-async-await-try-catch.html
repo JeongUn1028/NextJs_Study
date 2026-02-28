@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>event loop</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const aaa = () => {
+        try {
+          // micro queue에 들어가서 에러가 잡히지 않고 aaa 종료
+          axios.get("https://qqq.com");
+        } catch (error) {
+          console.log("error");
+          console.error(error);
+        }
+      };
+      // micro queue에 들어가고 bbb도 micro queue에 들어가서, bbb가 끝나기 전에 axios.get이 실행되서 에러가 잡힌다.
+      // 즉 await 를 사용하는건 뒤의 코드를 먼저 실행시킨다.(일반 함수면 바로 실행, async 함수면 micro queue에 들어가서 감싼 함수보다 먼저 실행)
+      const bbb = async () => {
+        try {
+          await axios.get("https://www.aaa.com");
+        } catch (error) {
+          console.log("error");
+          console.error(error);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="aaa()">start</button>
+    <button onclick="bbb()">start</button>
+  </body>
+</html>

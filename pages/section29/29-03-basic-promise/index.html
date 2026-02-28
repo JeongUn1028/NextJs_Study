@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>Promise 연습</title>
+  </head>
+  <script>
+    const onClickPromiseThen = () => {
+      new Promise((resolve, reject) => {
+        try {
+          setTimeout(() => {
+            const res = "성공!";
+            // 성공
+            resolve(res);
+          }, 2000);
+        } catch (err) {
+          // 실패
+          reject(err.message);
+        }
+      })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    const onClickPromiseAwait = async () => {
+      const result = await new Promise((resolve, reject) => {
+        try {
+          setTimeout(() => {
+            const res = "성공!";
+            // 성공
+            resolve(res);
+          }, 2000);
+        } catch (err) {
+          // 실패
+          reject(err.message);
+        }
+      });
+      console.log(result);
+    };
+  </script>
+  <body>
+    <button onClick="onClickPromiseThen()">Promise 실행(.then)</button>
+    <button onClick="onClickPromiseAwait()">Promise 실행(.await)</button>
+  </body>
+</html>

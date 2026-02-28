@@ -1,0 +1,98 @@
+<!-- `http://numbersapi.com/random?min=1&max=200`-->
+<!-- `https://koreanjson.com/posts/${postNum}`-->
+<!-- `https://koreanjson.com/posts?userId=${postWriter}` -->
+
+<!doctype html>
+<html lang="ko">
+    <head>
+        <title>Callback, Promise, Async/Await Practice</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            // function addEventListener(status, callback) {
+            //   const res = 70
+            //   if (status === "load") {
+            //     callback(res)
+            //   }
+            // }
+            //* 1. 랜덤하게 1~200 숫자 가져오기
+            //* 2. 해당 숫자의 게시글 가져오기
+            //* 3. 해당 게시글 작성자의 모든 게시글 가져오기
+            const callbackPractice = () => {
+                const numberReq = new XMLHttpRequest();
+                numberReq.open("GET", "http://numbersapi.com/random?min=1&max=200");
+                numberReq.send();
+                numberReq.addEventListener("load", (res) => {
+                    console.log(res);
+                    console.log("postNum: ", res.target.response.split(" ")[0]);
+                    const postNum = res.target.response.split(" ")[0];
+                    const postReq = new XMLHttpRequest();
+                    postReq.open("GET", `https://koreanjson.com/posts/${postNum}`);
+                    postReq.send();
+                    postReq.addEventListener("load", (res) => {
+                        console.log("postWriter: ", JSON.parse(res.target.response).UserId);
+                        const postWriter = JSON.parse(res.target.response).UserId;
+                        const userReq = new XMLHttpRequest();
+                        userReq.open("GET", `https://koreanjson.com/posts?userId=${postWriter}`);
+                        userReq.send();
+                        userReq.addEventListener("load", (res) => {
+                            console.log("userPosts: ", JSON.parse(res.target.response));
+                        });
+                    });
+                });
+            };
+            new Promise((resolve, reject) => {
+                try {
+                    const response = "";
+                    resolve(response);
+                } catch (err) {
+                    reject(err);
+                }
+            })
+                .then((res) => {
+                    // then = resolve(res)
+                    console.log(res);
+                })
+                .catch((err) => {
+                    // catch = reject(err)
+                    console.log(err);
+                });
+            const promisePractice = () => {
+                axios
+                    .get("http://numbersapi.com/random?min=1&max=200")
+                    .then((res) => {
+                        console.log("postNum: ", res.data.split(" ")[0]);
+                        const postNum = res.data.split(" ")[0];
+                        return axios.get(`https://koreanjson.com/posts/${postNum}`);
+                    })
+                    .then((res) => {
+                        console.log("postWriter: ", res.data.UserId);
+                        const postWriter = res.data.UserId;
+                        return axios.get(`https://koreanjson.com/posts?userId=${postWriter}`);
+                    })
+                    .then((res) => {
+                        console.log("userPosts: ", res.data);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            };
+
+            // axios, fetch => Promise를 지원하는 기능
+            // axios, fetch 등을 기다리는 2가지 방법
+            // 1. then/catch
+            // 2. async/await
+            const asyncAwaitPractice = async () => {
+                const numberRes = await axios.get("http://numbersapi.com/random?min=1&max=200");
+                const postNum = numberRes.data.split(" ")[0];
+                const postRes = await axios.get(`https://koreanjson.com/posts/${postNum}`);
+                const postWriter = postRes.data.UserId;
+                const userRes = await axios.get(`https://koreanjson.com/posts?userId=${postWriter}`);
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="callbackPractice()">Callback practice</button>
+        <button onclick="promisePractice()">Promise practice</button>
+        <button onclick="asyncAwaitPractice()">Async/Await practice</button>
+    </body>
+</html>

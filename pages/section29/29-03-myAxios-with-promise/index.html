@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>My Axios with Promise</title>
+    <script>
+      const myAxios = {
+        get: (url) => {
+          return new Promise((resolve, reject) => {
+            const xmlHttpReq = new XMLHttpRequest();
+            xmlHttpReq.open("GET", url);
+            xmlHttpReq.send();
+            xmlHttpReq.addEventListener("load", (res) => {
+              resolve(res.target.response);
+            });
+          });
+        },
+        post: (url, data) => {
+          return new Promise((resolve, reject) => {});
+        },
+      };
+      const onClickMyAxiosThen = () => {
+        const result = myAxios
+          .get("http://numbersapi.com/random?min=1&max=200")
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
+      const onClickMyAxiosAwait = async () => {
+        const result = await myAxios.get(
+          "http://numbersapi.com/random?min=1&max=200"
+        );
+        console.log(result);
+        return result;
+      };
+    </script>
+  </head>
+  <body>
+    <button onClick="onClickMyAxiosThen()">Axios Request(.then)</button>
+    <button onClick="onClickMyAxiosAwait()">Axios Request(.await)</button>
+  </body>
+</html>

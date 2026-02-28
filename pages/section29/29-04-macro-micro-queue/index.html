@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>Event Loop</title>
+    <script>
+      const onClickLoop = () => {
+        console.log("Start Loop");
+
+        // asynchronous task that includes a macrotask (setTimeout)
+        setTimeout(() => {
+          console.log("After 0ms");
+          // nested asynchronous task that includes a microtask (Promise)
+          new Promise((resolve) => {
+            resolve("Promise inside setTimeout Resolved");
+          }).then((message) => {
+            console.log(message);
+          });
+        }, 0);
+
+        // asynchronous task that includes a microtask (Promise)
+        new Promise((resolve) => {
+          resolve("First Promise Resolved");
+        }).then((message) => {
+          console.log(message);
+        });
+
+        // asynchronous task that includes a macrotask (setInterval)
+        setInterval(() => {
+          console.log("Interval Task");
+        }, 0);
+
+        // asynchronous task that includes a microtask (Promise)
+        new Promise((resolve) => {
+          resolve("Second Promise Resolved");
+        }).then((message) => {
+          console.log(message);
+        });
+
+        console.log("End Loop");
+      };
+      // Start Loop
+      // End Loop
+      // First Promise Resolved
+      // Second Promise Resolved
+      // After 0ms
+      // Promise inside setTimeout Resolved
+      // Interval Task
+    </script>
+  </head>
+  <body>
+    <button onclick="onClickLoop()">Start Event Loop</button>
+  </body>
+</html>
