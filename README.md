@@ -74,3 +74,8 @@ web-editor
 
 이벤트 루프와 promise
 refresh-token
+
+### 3.1(일)
+
+성능 최적화
+- 메모이제이션
