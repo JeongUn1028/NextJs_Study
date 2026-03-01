@@ -78,4 +78,7 @@ refresh-token
 ### 3.1(일)
 
 성능 최적화
+
 - 메모이제이션
+- critical-rendering-path
+- lay-out-shift, prefetch, preload

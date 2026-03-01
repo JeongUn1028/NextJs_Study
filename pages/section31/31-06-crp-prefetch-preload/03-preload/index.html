@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>Preload</title>
+    <!-- 1. Preload? 는 한번에 6개 받아오므로, 이미지는 가장 마지막에 다운로드-->
+    <!-- 2. 눈에 보이는 이미지를 먼저 다운로드 받아서 보여주고, 클릭하면 실행되는 JS는 나중에 다운로드-->
+
+    <!-- prefetch 는 다음페이지를 위해 받는 것이므로, 마지막에 받음 -->
+    <link rel="preload" as="image" href="./live0.png" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index1.js"></script>
+    <script src="./index2.js"></script>
+    <script src="./index3.js"></script>
+    <script src="./index4.js"></script>
+    <script src="./index5.js"></script>
+    <script src="./index6.js"></script>
+  </head>
+  <body>
+    <img src="./live0.png" alt="Live Image" />
+    <a href="./board.html">게시판</a>
+  </body>
+</html>
