@@ -23,9 +23,16 @@ const getAccessToken = async (): Promise<string> => {
     return newAccessToken;
   } catch (error) {
     if (error instanceof Error) {
-      alert(error.message);
+      const maybeGraphQLError = error as Error & {
+        response?: { errors?: Array<{ message?: string }> };
+      };
+      const message =
+        maybeGraphQLError.response?.errors?.[0]?.message ||
+        error.message ||
+        "토큰 재발급에 실패했습니다.";
+      throw new Error(message);
     }
-    throw new Error("Failed to get access token");
+    throw new Error("토큰 재발급에 실패했습니다.");
   }
 };
 

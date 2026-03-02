@@ -12,12 +12,18 @@ const loginCheck = <P extends object>(
       restoreAccessTokenLoadable
     );
     useEffect((): void => {
-      accessTokenLoadable.toPromise().then((newAccessToken): void => {
-        if (!newAccessToken) {
+      accessTokenLoadable
+        .toPromise()
+        .then((newAccessToken): void => {
+          if (!newAccessToken) {
+            alert("로그인이 필요합니다.");
+            router.push("/section30/30-01-login");
+          }
+        })
+        .catch((): void => {
           alert("로그인이 필요합니다.");
           router.push("/section30/30-01-login");
-        }
-      });
+        });
     }, []);
     return <Component {...props} />;
   };

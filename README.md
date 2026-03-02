@@ -82,3 +82,6 @@ refresh-token
 - 메모이제이션
 - critical-rendering-path
 - lay-out-shift, prefetch, preload
+- image 미리보기
+- data prefetch
+- optimistic UI

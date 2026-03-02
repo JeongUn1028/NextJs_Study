@@ -1,10 +1,10 @@
 import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
+import { MouseEvent } from "react";
 import {
   IQuery,
   IQueryFetchBoardsArgs,
 } from "../../../src/commons/types/generated/types";
-import { MouseEvent } from "react";
 
 const FETCH_BOARDS = gql`
   query fetchBoards($page: Int) {
@@ -16,7 +16,7 @@ const FETCH_BOARDS = gql`
     }
   }
 `;
-export default function StaticRoutingMovedPage() {
+export default function StaticRoutingMovedPage(): JSX.Element {
   const { data, refetch } = useQuery<
     Pick<IQuery, "fetchBoards">,
     IQueryFetchBoardsArgs

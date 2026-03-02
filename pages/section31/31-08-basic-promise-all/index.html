@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>Promise All</title>
+    <script>
+      const startPromise = async () => {
+        console.time("=== 개별 프로미스 ===");
+        const result1 = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("철수");
+          }, 1000);
+        });
+        const result2 = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("영희");
+          }, 2000);
+        });
+        const result3 = await new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("훈이");
+          }, 3000);
+        });
+        const results = [result1, result2, result3];
+        console.log(results);
+        console.timeEnd("=== 개별 프로미스 ===");
+      };
+      const startPromiseAll = () => {
+        console.time("=== Promise.all ===");
+        Promise.all([
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve("철수");
+            }, 1000);
+          }),
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve("영희");
+            }, 2000);
+          }),
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve("훈이");
+            }, 3000);
+          }),
+        ]).then((results) => {
+          console.log(results);
+          console.timeEnd("=== Promise.all ===");
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="startPromise()">Promise</button>
+    <button onclick="startPromiseAll()">Promise.all</button>
+  </body>
+</html>

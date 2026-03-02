@@ -19,8 +19,12 @@ const visitedPageState = atom({
 const restoreAccessTokenLoadable = selector({
   key: "restoreAccessTokenLoadable",
   get: async (): Promise<string> => {
-    const newAccessToken = await getAccessToken();
-    return newAccessToken;
+    try {
+      const newAccessToken = await getAccessToken();
+      return newAccessToken;
+    } catch {
+      return "";
+    }
   },
 });
 export {

@@ -43,32 +43,32 @@ export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
     });
   }, []);
   //* error handling을 위해 ApolloLink 사용
-  const errorLink = onError(
-    ({ graphQLErrors, operation, forward }): Promise<void> => {
-      //* 1. error catch
-      if (graphQLErrors) {
-        for (const err of graphQLErrors) {
-          //* 1-1. 에러 중 UNAUTHENTICATED(인증 실패) 에러인 경우
-          if (err.extensions?.code === "UNAUTHENTICATED") {
-            return fromPromise(
-              getAccessToken().then((newAccessToken): void => {
-                setAccessToken(newAccessToken);
-                //* 1-2. 재발급 받은 accessToken으로 실패했던 쿼리 재요청하기
-                operation.setContext({
-                  headers: {
-                    ...operation.getContext().headers,
-                    Authorization: `Bearer ${newAccessToken}`,
-                  },
-                });
-              })
-            ).flatMap(() => forward(operation));
-          }
+  const errorLink = onError(({ graphQLErrors, operation, forward }) => {
+    //* 1. error catch
+    if (graphQLErrors) {
+      for (const err of graphQLErrors) {
+        //* 1-1. 에러 중 UNAUTHENTICATED(인증 실패) 에러인 경우
+        if (err.extensions?.code === "UNAUTHENTICATED") {
+          return fromPromise(
+            getAccessToken().then((newAccessToken): string => {
+              setAccessToken(newAccessToken);
+              //* 1-2. 재발급 받은 accessToken으로 실패했던 쿼리 재요청하기
+              operation.setContext({
+                headers: {
+                  ...operation.getContext().headers,
+                  Authorization: `Bearer ${newAccessToken}`,
+                },
+              });
+              return newAccessToken;
+            })
+          ).flatMap(() => forward(operation));
         }
       }
-      //* 2. refreshToken 재발급 받는 로직
-      //* 3. 재발급 받은 accessToken으로 직전 실패했던 쿼리 재요청하기
     }
-  );
+    //* 2. refreshToken 재발급 받는 로직
+    //* 3. 재발급 받은 accessToken으로 직전 실패했던 쿼리 재요청하기
+    return undefined;
+  });
   const client = new ApolloClient({
     link: ApolloLink.from([errorLink, uploadLink]),
     cache: GLOBAL_STATE,

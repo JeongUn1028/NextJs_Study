@@ -1,11 +1,11 @@
 import { gql } from "@apollo/client";
 import { useMutation } from "@apollo/client/react";
 import { useRef, useState, type ChangeEvent } from "react";
+import { checkValidationFile } from "../../../src/commons/libraries/validationFile";
 import {
   IMutation,
   IMutationUploadFileArgs,
 } from "../../../src/commons/types/generated/types";
-import { checkValidationFile } from "../../../src/commons/libraries/validationFile";
 
 const UPLOAD_FILE = gql`
   mutation uploadFile($file: Upload!) {
@@ -15,7 +15,7 @@ const UPLOAD_FILE = gql`
   }
 `;
 
-export default function ImageUploadPage() {
+export default function ImageUploadPage(): JSX.Element {
   const [uploadFile] = useMutation<
     Pick<IMutation, "uploadFile">,
     IMutationUploadFileArgs
@@ -42,7 +42,7 @@ export default function ImageUploadPage() {
       <h1>이미지 업로드 연습하기</h1>
       <input
         type="file"
-        onChange={onChangeFile}
+        onChange={wrapEventAsync(onChangeFile)}
         multiple={true}
         accept="image/jpeg,image/png"
       />
@@ -51,7 +51,7 @@ export default function ImageUploadPage() {
       <input
         style={{ display: "none" }}
         type="file"
-        onChange={onChangeFile}
+        onChange={wrapEventAsync(onChangeFile)}
         ref={fileRef}
         accept="image/jpeg,image/png"
       />
