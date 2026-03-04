@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`snapshot test 1`] = `
+<div>
+  <div>
+    유닛 테스트 페이지
+  </div>
+  테스트 입력하기: 
+  <input />
+  <button>
+    등록하기
+  </button>
+</div>
+`;

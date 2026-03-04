@@ -27,12 +27,9 @@ module.exports = {
     },
   },
   rules: {
-    // React 규칙
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
-
-    // TypeScript 규칙
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
@@ -64,10 +61,22 @@ module.exports = {
         },
       },
     ],
-
-    // 일반 규칙
     "no-console": ["warn", { allow: ["log", "warn", "error"] }],
     "prefer-const": "error",
     "no-var": "error",
   },
+  overrides: [
+    {
+      files: ["**/*.js", "**/*.mjs", "**/*.cjs"],
+      parserOptions: {
+        project: null,
+      },
+      rules: {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+      },
+    },
+  ],
 };

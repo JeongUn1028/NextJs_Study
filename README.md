@@ -91,3 +91,13 @@ refresh-token
 브라우저
 
 - og tag
+
+### 3.4(수)
+
+테스트 코드와 TDD
+
+- jest
+- snapshot
+- event
+- mocking test
+- e2e test cypress

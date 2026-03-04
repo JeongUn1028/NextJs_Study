@@ -25,12 +25,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "ignoreDeprecations": "6.0",
+    "ignoreDeprecations": "5.0",
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/section24/24-08-typescript-generic-practice-hof copy/index.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/section24/24-08-typescript-generic-practice-hof copy/index.tsx"
+  ],
   "exclude": [
     "node_modules",
     ".next",
